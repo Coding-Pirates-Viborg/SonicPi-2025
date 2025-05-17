@@ -1,24 +1,26 @@
-'''
+=begin
+--------------------------------------------------------------------------------
 Modtage en trigger besked fra Open Sound Control (OSC)
-------------------------------------------------------
-Programmet her lytter efter en besked via OSC protokollen på
-stien "/osc*/trigger".
 
-Når beskeden modtages, kalder den funktionen "afspil_sekvens".
-Denne funktion skal du selv definere i Sonic Pi, så den afspiller den
-rigtige musik i forhold til hvad vi har planlagt på workshoppen.
+Programmet her lytter efter en besked via OSC protokollen på stien "/osc*/trigger".
+
+Når beskeden modtages, kalder den funktionen "afspil_sekvens". Denne funktion skal
+du selv definere i Sonic Pi, så den afspiller den rigtige musik i forhold til hvad
+vi har planlagt på workshoppen.
 
 HVORDAN BRUGER JEG DETTE?
 -------------------------
-Filen her skal ligge på din computers harddisk, et sted
-hvor den kan læses fra Sonic Pi.
+Filen her skal ligge på din computers harddisk, et sted hvor den kan læses fra Sonic Pi.
 
-Det letteste er at klone hele "SonicPi-2025" repoet.
-Hvis du ikke ved hvordan man gør, så spørg i workshoppen :-)
+Det letteste er at klone hele "SonicPi-2025" repoet. Hvis du ikke ved hvordan man gør,
+så spørg i workshoppen :-)
 
-I Sonic Pi kan man afspille en fil med "run_file"
-Der er et eksempel på dette i filen "start-musiksekvens-eksempel.rb"
-'''
+I Sonic Pi kan man afspille en fil med "run_file". Der er et eksempel på dette i
+filen "start-musiksekvens-eksempel.rb" i Github her:
+https://github.com/Coding-Pirates-Viborg/SonicPi-2025/blob/main/osc-trigger/Sonic-Pi/start-musiksekvens-eksempel.rb
+--------------------------------------------------------------------------------
+=end
+
 define :receive_osc do
   puts "Modtager OSC beskeder på maskine: " + MIN_MASKINE.to_s
   use_real_time

@@ -1,12 +1,18 @@
-# Kopier denne kode og indsæt den i en af bufferne
-# i Sonic Pi på din egen maskine.
+=begin
+--------------------------------------------------------------------------------
+Kopier denne kode og indsæt den i en af bufferne i Sonic Pi på din egen maskine.
 
-# Du kan f.eks. placere den øverst i den buffer, hvor
-# din komposition ligger.
+Du kan f.eks. placere den øverst i den buffer, hvor dine musikstykker ligger.
 
-# Modtage en trigger besked fra Open Sound Control (OSC)
-# Filen skal ligge på din computer
-# Se Github:
+Programmet der modtage en trigger besked fra Open Sound Control (OSC) skal ligge
+på din computer
+
+Du kan finde filen i Github:
+https://github.com/Coding-Pirates-Viborg/SonicPi-2025/blob/main/osc-trigger/Sonic-Pi/osc-receive-trigger.rb
+--------------------------------------------------------------------------------
+=end
+
+# Her afvikles filen der modtager OSC beskeder
 run_file "~/dev/kodepirat/SonicPi-2025/osc-trigger/Sonic-Pi/osc-receive-trigger.rb"
 
 # Sæt denne variabel til det nummer vi er blevet enige om
