@@ -1,2 +1,4 @@
-/osc/venv/
-/osc/.idea
+/osc-trigger/.idea
+/osc-trigger/venv/
+/.idea/
+
