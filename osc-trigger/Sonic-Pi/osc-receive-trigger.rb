@@ -21,6 +21,15 @@ https://github.com/Coding-Pirates-Viborg/SonicPi-2025/blob/main/osc-trigger/Soni
 --------------------------------------------------------------------------------
 =end
 
+# Sender et tick cue på hvert taktslag.
+# Bruges til at synkronisere at sekvenserne ikke starter ude af takt
+live_loop :sequencer do
+  cue :tick
+  sleep 1
+end
+
+
+
 define :receive_osc do
   puts "Modtager OSC beskeder på maskine: " + MIN_MASKINE.to_s
   use_real_time
@@ -46,10 +55,7 @@ define :receive_osc do
 
     if modtager == MIN_MASKINE
       puts "Wu-huu! Afspiller nu sekvens: " + sekvens.to_s
-      # Det er i denne funktion din egen musik skal startes
-      # Du kan finde et eksemple på dette på GitHub her:
-      #
-      afspil_sekvens(sekvens)
+      afspil_sekvens(sekvens) # denne funktion skal du skrive koden til
 
     end
   end
