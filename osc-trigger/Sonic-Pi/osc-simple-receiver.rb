@@ -1,19 +1,22 @@
+# Orkester computere
+# -------------------------------
+
 # Lyt efter trigger signalet
 live_loop :listen_for_trigger do
-    sekvens, _ = sync "/osc*/start_pc1"
-    puts "SEKVENS modtaget: " + sekvens.to_s
-    # Når det modtages, så afspil den sekvens
-    # der er blevet sendt
-    case sekvens
-        when 1
-            cue :s1
-        when 2
-            cue :s2
-    end
+  sekvens, _ = sync "/osc*/start"
+  puts "SEKVENS modtaget: " + sekvens.to_s
+  
+  # Når det modtages, så afspil den sekvens
+  # der er blevet sendt
+  case sekvens
+  when 1
+    cue :s1
+  when 2
+    cue :s2
+  else
+    puts "Ukendt sekvens: #{sekvens}"
+  end
 end
-
-# Her ligger vi vores musiksekvenser
-# De afspilles når de bliver "cued" fra triggeren
 
 live_loop :s1_stortromme do
   sync_bpm :s1
@@ -23,10 +26,12 @@ live_loop :s1_stortromme do
   end
 end
 
-live_loop :s1_lilletromme do
-  sync_bpm :pc1_s2
+live_loop :s2_lilletromme do
+  sync_bpm :s2
   4.times do
     sample :sn_dolf
     sleep 0.1
   end
 end
+
+
