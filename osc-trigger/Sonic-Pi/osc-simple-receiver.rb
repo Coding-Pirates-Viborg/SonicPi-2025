@@ -1,5 +1,11 @@
-# Orkester computere
-# -------------------------------
+=begin
+-----------------------------------------
+Orkester computer
+
+Kopier denne kode og indsæt den i en af
+bufferne i Sonic Pi på din egen maskine.
+-----------------------------------------
+=end
 
 # Lyt efter trigger signalet
 live_loop :listen_for_trigger do
